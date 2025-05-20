@@ -1,0 +1,31 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="ghostnetspersistence">
+        <!-- <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>org.ghostnets.Net</class>
+        <class>org.ghostnets.Sighting</class>
+        <class>org.ghostnets.Recoverer</class>
+
+        <properties>
+            <!-- Corrected JDBC URL with forward slashes and ;create=true -->
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:derby:C:/db/ghostnetsdb;create=true" />
+
+            <property name="jakarta.persistence.jdbc.user" value="admin" />
+            <property name="jakarta.persistence.jdbc.password" value="admin" />
+            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+
+            <!-- Hibernate properties -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.highlight_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>

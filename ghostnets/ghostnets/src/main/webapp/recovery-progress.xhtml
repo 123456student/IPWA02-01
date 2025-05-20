@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+    <title>GhostNets</title>
+</h:head>
+<h:body>
+    <p:menubar>
+        <p:menuitem url="overview.xhtml" value="Home" icon="pi pi-home"/>
+        <p:menuitem url="report.xhtml" value="Report Net" icon="pi pi-exclamation-circle"/>
+        <p:menuitem url="faq.xhtml" value="FAQ" icon="pi pi-question-circle"/>
+    </p:menubar>
+    <p:growl id="growl" life="5000" globalOnly="true" sticky="true"/>
+    <h:form>
+        <div class="centered-form">
+            <h:panelGrid columns="3" >
+                <p:outputLabel for="firstName" value="First Name"/>
+                <p:inputText type="text" id="firstName" required="true" value="#{recoveryController.recoverer.firstName}"/>
+                <p:message id="firstNameMsg" for="firstName" styleClass="error"/>
+
+                <p:outputLabel for="lastName" value="Last Name"/>
+                <p:inputText type="text" id="lastName" required="true" value="#{recoveryController.recoverer.lastName}"/>
+                <p:message id="lastNameMsg" for="lastName" styleClass="error"/>
+
+                <p:outputLabel for="mailAddress" value="Email address"/>
+                <p:inputText type="text" id="mailAddress" value="#{recoveryController.recoverer.mailAddress}"/>
+                <p:message id="mailAddressMsg" for="mailAddress" styleClass="error"/>
+            </h:panelGrid>
+            <p:commandButton value="Recovery In Progress"
+                             action="#{recoveryController.setRecoveryStatusInProgress()}"
+                             update="growl firstNameMsg lastNameMsg"
+                             ajax="true" />
+        </div>
+    </h:form>
+    <div class="centered-form">
+        <h:form>
+            <p:commandButton value="Return To Overview"
+                             action="index.xhmtl?faces-redirect=true"/>
+        </h:form>
+    </div>
+</h:body>
+</html>
