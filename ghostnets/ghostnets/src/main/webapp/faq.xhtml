@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+    <title>GhostNets</title>
+</h:head>
+<h:body>
+    <p:menubar>
+        <p:menuitem url="overview.xhtml" value="Home" icon="pi pi-home"/>
+        <p:menuitem url="report.xhtml" value="Report Net" icon="pi pi-exclamation-circle"/>
+        <p:menuitem url="faq.xhtml" value="FAQ" icon="pi pi-question-circle"/>
+    </p:menubar>
+
+    <h:form>
+        <div class="card">
+            <h1>Frequently Asked Questions</h1>
+            <p:accordionPanel multiple="true" widgetVar="multiple" scrollIntoView="center">
+                <p:tab title='What is a "Ghost Net"'>
+                    <p class="m-0">
+                        Ghost Nets are abandoned fishing nets that float through the open ocean.
+                    </p>
+                </p:tab>
+                <p:tab title="Why are ghost nets a problem?">
+                    <p class="m-0">
+                        Fish, marine mammals and birds can get tangled up in these abandoned nets. As these animals are usually unable to free themselves again, more often than not this means certain death by starvation or suffocation.
+
+                    </p>
+                </p:tab>
+                <p:tab title="How does Shea Sepherd help fight ghost nets?">
+                    <p class="m-0">
+                        We developed GhostNets.org. On this website everyone can join the battle against ghost nets by reporting them when they see them on the ocean or near the shore. Once a net is reported people with the necessary equipment find them on GhostNets.org and go recover them. Once that is done they can report that as well so other people know it is not going to pose a danger to the marine wildlife anymore.
+                    </p>
+                </p:tab>
+            </p:accordionPanel>
+        </div>
+    </h:form>
+</h:body>
+</html>

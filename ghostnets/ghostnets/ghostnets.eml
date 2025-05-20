@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_8" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<lib name="Maven: junit:junit:3.8.1" scope="TEST"/>
+	<lib name="Maven: jakarta.servlet:jakarta.servlet-api:5.0.0" scope="PROVIDED"/>
+	<lib name="Maven: org.hibernate.models:hibernate-models:0.8.3" scope="RUNTIME"/>
+	<lib name="Maven: io.smallrye:jandex:3.1.2" scope="RUNTIME"/>
+	<lib name="Maven: com.fasterxml:classmate:1.5.1" scope="RUNTIME"/>
+	<lib name="Maven: net.bytebuddy:byte-buddy:1.14.12" scope="RUNTIME"/>
+	<lib name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:4.0.0" scope="RUNTIME"/>
+	<lib name="Maven: jakarta.activation:jakarta.activation-api:2.1.0" scope="RUNTIME"/>
+	<lib name="Maven: org.glassfish.jaxb:jaxb-runtime:4.0.2" scope="RUNTIME"/>
+	<lib name="Maven: org.glassfish.jaxb:jaxb-core:4.0.2" scope="RUNTIME"/>
+	<lib name="Maven: org.eclipse.angus:angus-activation:2.0.0" scope="RUNTIME"/>
+	<lib name="Maven: org.glassfish.jaxb:txw2:4.0.2" scope="RUNTIME"/>
+	<lib name="Maven: com.sun.istack:istack-commons-runtime:4.1.1" scope="RUNTIME"/>
+	<lib name="Maven: org.antlr:antlr4-runtime:4.13.0" scope="RUNTIME"/>
+	<levels>
+		<level name="Maven: junit:junit:3.8.1" value="project"/>
+		<level name="Maven: jakarta.servlet:jakarta.servlet-api:5.0.0" value="project"/>
+		<level name="Maven: org.glassfish:jakarta.faces:4.0.0-M1" value="project"/>
+		<level name="Maven: jakarta.annotation:jakarta.annotation-api:2.0.0" value="project"/>
+		<level name="Maven: jakarta.inject:jakarta.inject-api:2.0.0" value="project"/>
+		<level name="Maven: jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0" value="project"/>
+		<level name="Maven: jakarta.el:jakarta.el-api:4.0.0" value="project"/>
+		<level name="Maven: jakarta.interceptor:jakarta.interceptor-api:2.0.0" value="project"/>
+		<level name="Maven: org.jboss.weld.servlet:weld-servlet-core:4.0.2.Final" value="project"/>
+		<level name="Maven: org.jboss.weld.environment:weld-environment-common:4.0.2.Final" value="project"/>
+		<level name="Maven: org.jboss.weld:weld-core-impl:4.0.2.Final" value="project"/>
+		<level name="Maven: org.jboss.weld:weld-spi:4.0.SP1" value="project"/>
+		<level name="Maven: org.jboss.weld:weld-api:4.0.SP1" value="project"/>
+		<level name="Maven: org.jboss.weld.probe:weld-probe-core:4.0.2.Final" value="project"/>
+		<level name="Maven: org.jboss.weld.module:weld-jsf:4.0.2.Final" value="project"/>
+		<level name="Maven: org.jboss.weld.module:weld-web:4.0.2.Final" value="project"/>
+		<level name="Maven: org.jboss.logging:jboss-logging:3.4.2.Final" value="project"/>
+		<level name="Maven: org.jboss.classfilewriter:jboss-classfilewriter:1.2.5.Final" value="project"/>
+		<level name="Maven: org.primefaces:primefaces:jakarta:11.0.0" value="project"/>
+		<level name="Maven: org.apache.derby:derby:10.17.1.0" value="project"/>
+		<level name="Maven: org.apache.derby:derbyshared:10.17.1.0" value="project"/>
+		<level name="Maven: org.apache.derby:derbytools:10.17.1.0" value="project"/>
+		<level name="Maven: org.hibernate.orm:hibernate-core:7.0.0.Alpha2" value="project"/>
+		<level name="Maven: jakarta.persistence:jakarta.persistence-api:3.2.0-M2" value="project"/>
+		<level name="Maven: jakarta.transaction:jakarta.transaction-api:2.0.1" value="project"/>
+		<level name="Maven: org.hibernate.models:hibernate-models:0.8.3" value="project"/>
+		<level name="Maven: io.smallrye:jandex:3.1.2" value="project"/>
+		<level name="Maven: com.fasterxml:classmate:1.5.1" value="project"/>
+		<level name="Maven: net.bytebuddy:byte-buddy:1.14.12" value="project"/>
+		<level name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:4.0.0" value="project"/>
+		<level name="Maven: jakarta.activation:jakarta.activation-api:2.1.0" value="project"/>
+		<level name="Maven: org.glassfish.jaxb:jaxb-runtime:4.0.2" value="project"/>
+		<level name="Maven: org.glassfish.jaxb:jaxb-core:4.0.2" value="project"/>
+		<level name="Maven: org.eclipse.angus:angus-activation:2.0.0" value="project"/>
+		<level name="Maven: org.glassfish.jaxb:txw2:4.0.2" value="project"/>
+		<level name="Maven: com.sun.istack:istack-commons-runtime:4.1.1" value="project"/>
+		<level name="Maven: org.antlr:antlr4-runtime:4.13.0" value="project"/>
+	</levels>
+</component>
