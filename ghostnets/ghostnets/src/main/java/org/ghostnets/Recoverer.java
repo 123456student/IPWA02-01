@@ -3,7 +3,6 @@ package org.ghostnets;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -20,8 +19,7 @@ public class Recoverer implements Serializable
 
     private String mailAddress;
 
-    public Recoverer()
-    {}
+    public Recoverer() {}
 
     public Recoverer(String firstName, String lastName)
     {
@@ -52,13 +50,9 @@ public class Recoverer implements Serializable
         this.lastName = lastName;
     }
 
-    public String getMailAddress() {
-        return mailAddress;
-    }
+    public String getMailAddress() { return mailAddress; }
 
-    public void setMailAddress(String mailAddress) {
-        this.mailAddress = mailAddress;
-    }
+    public void setMailAddress(String mailAddress) { this.mailAddress = mailAddress; }
 
     public long getId() {return this.id;}
 }

@@ -7,7 +7,6 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -18,12 +17,8 @@ public class SightingController implements Serializable
 {
     private static EntityManagerFactory emf;
     private int netId;
-
-
-    private Report report;
-
     private Net net;
-
+    private Report report;
     public SightingController(){}
 
     @PostConstruct
@@ -66,7 +61,6 @@ public class SightingController implements Serializable
             System.out.println("Exception during initialization: " + e.getMessage());
             e.printStackTrace();
         }
-
         System.out.println("Finished initializing SightingController");
     }
 
@@ -81,18 +75,30 @@ public class SightingController implements Serializable
         System.out.println("Entering registerNewSighting");
         System.out.println(""+net);
         if (net != null) {
-            System.out.println("Report data: Lat=" + report.getLatitude() + ", Long=" + report.getLongitude() + ", Timestamp=" + report.getTimestamp());
+            System.out.println("Lat=" + report.getLatitude()
+                    + ", Long=" + report.getLongitude()
+                    + ", Timestamp=" + report.getTimestamp());
             System.out.println("netId=" + netId);
             Sighting sighting = new Sighting();
             sighting.setLongitude(report.getLongitude());
             sighting.setLatitude(report.getLatitude());
             sighting.setTimestamp(report.getTimestamp());
             sighting.setNet(net);
+
+            Recoverer recoverer = new Recoverer();
+            recoverer.setFirstName(report.getFirstName());
+            recoverer.setLastName(report.getLastName());
+            recoverer.setMailAddress(report.getMailAddress());
+
+            sighting.setReporter(recoverer);
             net.addSighting(sighting);
+
+
             EntityManager em = getEmf().createEntityManager();
             EntityTransaction tx = em.getTransaction();
             try {
                 tx.begin();
+                em.persist(recoverer);
                 em.persist(sighting);
                 em.merge(net);
                 tx.commit();

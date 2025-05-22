@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Random;
-
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
@@ -20,9 +19,7 @@ import jakarta.persistence.Persistence;
 public class ReportController implements Serializable
 {
     private static EntityManagerFactory emf;
-
     private Report report;
-
     public ReportController(){}
 
     @PostConstruct
@@ -86,38 +83,6 @@ public class ReportController implements Serializable
         }
     }
 
-    public void generateRandNet(){
-        System.out.println("Entered generateRandNet");
-        EntityManager em =  getEmf().createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-
-        Random rnd = new Random();
-        try {
-            tx.begin();
-            Net newNet = new Net(rnd.nextInt(101), Net.RecoveryStatus.values()[rnd.nextInt(4)]);
-            Recoverer recoverer = new Recoverer("Peter", "Gabriel", "pGabriel@gabriel.com");
-            Sighting newSighting = new Sighting(
-                    LocalDateTime.now(),
-                    rnd.nextFloat(90),
-                    rnd.nextFloat(90),
-                    recoverer);
-            newNet.addSighting(newSighting);
-            em.persist(recoverer);
-            em.persist(newNet);
-            em.persist(newSighting);
-            tx.commit();
-        } catch (Exception e) {
-            if (tx.isActive()) tx.rollback();
-            System.out.println(e.getMessage());
-        } finally {
-            em.close();
-        }
-
-        Long count =  getEmf().createEntityManager()
-                .createQuery("SELECT COUNT(n) FROM Net n", Long.class)
-                .getSingleResult();
-        System.out.println("Nets in DB: " + count);
-    }
     public Report getReport() {
         return report;
     }

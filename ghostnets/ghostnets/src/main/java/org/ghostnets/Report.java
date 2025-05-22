@@ -2,7 +2,6 @@ package org.ghostnets;
 
 import jakarta.inject.Named;
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -35,9 +34,7 @@ public class Report implements Serializable
         this.size = size;
     }
 
-    public Net.RecoveryStatus getRecoveryStatus() {
-        return recoveryStatus;
-    }
+    public Net.RecoveryStatus getRecoveryStatus() { return recoveryStatus; }
 
     public void setRecoveryStatus(Net.RecoveryStatus recoveryStatus) {
         this.recoveryStatus = recoveryStatus;
@@ -86,6 +83,7 @@ public class Report implements Serializable
     public void setMailAddress(String mailAddress) {
         this.mailAddress = mailAddress;
     }
+
     public String getMailAddress() {
         return mailAddress;
     }

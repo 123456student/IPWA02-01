@@ -2,7 +2,6 @@ package org.ghostnets;
 
 import java.io.Serializable;
 import java.util.Map;
-
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.ExternalContext;
@@ -17,9 +16,7 @@ public class RecoveryController implements Serializable
 {
     private static EntityManagerFactory emf;
     private int netId;
-
     private Net net;
-
     private Recoverer recoverer;
 
     public RecoveryController(){

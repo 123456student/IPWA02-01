@@ -13,9 +13,8 @@
         <class>org.ghostnets.Recoverer</class>
 
         <properties>
-            <!-- Corrected JDBC URL with forward slashes and ;create=true -->
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:derby:C:/db/ghostnetsdb;create=true" />
+                                  value="jdbc:derby:C:/Daten/Uni/IU/Sem 3/Programmierung von industriellen Informationssysteme mit Java EE/git/db/ghostnetsdb;create=true" />
 
             <property name="jakarta.persistence.jdbc.user" value="admin" />
             <property name="jakarta.persistence.jdbc.password" value="admin" />

@@ -1,7 +1,6 @@
 package org.ghostnets;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,12 +22,9 @@ public class Net implements Serializable
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private int size;
-
     private RecoveryStatus recoveryStatus;
-
     @OneToMany(mappedBy = "net", orphanRemoval = true)
     private List<Sighting> sightings;
-
     @ManyToOne
     @JoinColumn(name = "recovered_by_id")
     private Recoverer recoveredBy;
@@ -50,20 +46,24 @@ public class Net implements Serializable
             return null;
         }
 
-        Sighting mostRecent = Collections.max(
+        return Collections.max(
                 validSightings,
                 Comparator.comparing(Sighting::getTimestamp)
         );
-
-        return mostRecent;
     }
 
-    public double getMostRecentLat(){
-        return getMostRecentSighting().getLatitude();
-    }
+    public double getMostRecentLat(){ return getMostRecentSighting().getLatitude(); }
 
     public double getMostRecentLong(){
         return getMostRecentSighting().getLongitude();
+    }
+
+    public void addSighting(Sighting sighting) {
+        if (this.sightings == null){
+            this.sightings = new ArrayList<Sighting>();
+        }
+        this.sightings.add(sighting);
+        sighting.setNet(this);
     }
 
     public String toString() {
@@ -76,7 +76,7 @@ public class Net implements Serializable
 
     public void setRecoveredBy(Recoverer recoveredBy) {this.recoveredBy = recoveredBy; }
 
-    public long getId() { return id; }
+    public long getId() {return id;}
 
     public int getSize() {
         return size;
@@ -86,12 +86,12 @@ public class Net implements Serializable
         this.size = size;
     }
 
-    public RecoveryStatus getRecoveryStatus() {
-        return recoveryStatus;
-    }
-
     public void setRecoveryStatus(RecoveryStatus recoveryStatus) {
         this.recoveryStatus = recoveryStatus;
+    }
+
+    public RecoveryStatus getRecoveryStatus() {
+        return recoveryStatus;
     }
 
     public void setRecoverer(Recoverer recovererBy) {this.recoveredBy = recovererBy;}
@@ -102,13 +102,5 @@ public class Net implements Serializable
 
     public void setSightings(List<Sighting> sightings) {
         this.sightings = sightings;
-    }
-
-    public void addSighting(Sighting sighting) {
-        if (this.sightings == null){
-            this.sightings = new ArrayList<Sighting>();
-        }
-        this.sightings.add(sighting);
-        sighting.setNet(this);
     }
 }

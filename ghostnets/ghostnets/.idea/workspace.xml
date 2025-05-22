@@ -5,34 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1872f5f-096e-4cc2-a819-cc02e9ef1849" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/Net.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/OverviewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/Recoverer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/RecoveryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/ReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/Sighting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/SightingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/faq.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/overview.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/recovery-progress.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/report.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/turtle-sea-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/sighting.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/README_DO_NOT_TOUCH_FILES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c10.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c101.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c111.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c121.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c130.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c141.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c150.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c150.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c161.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c161.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c171.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c171.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c180.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c180.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c1a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c1a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c1b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c1b1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c1e0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c1e0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c1f1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c1f1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c20.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c200.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c200.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c211.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c211.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c221.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c221.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c230.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c230.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c241.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c241.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c31.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c380.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c380.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c391.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c391.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c3a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c3a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c3b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c3b1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c400.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c400.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c41.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c411.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c411.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c421.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c421.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c51.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c60.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c71.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c81.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/c90.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/ca1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/cb1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/cc0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/cc0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/ce1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/ce1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/seg0/cf0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../db/ghostnetsdb/service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../db/ghostnetsdb/service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ghostnets.eml" beforeDir="false" afterPath="$PROJECT_DIR$/ghostnets.eml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ghostnets/Net.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/Net.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ghostnets/OverviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/OverviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ghostnets/Recoverer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/Recoverer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ghostnets/RecoveryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/RecoveryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ghostnets/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ghostnets/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ghostnets/Sighting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/Sighting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ghostnets/SightingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ghostnets/SightingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/overview.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/overview.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/recovery-progress.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/recovery-progress.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/report.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/report.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/turtle-sea-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/sighting.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sighting.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +107,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -79,21 +118,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.ghostnets [package].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Daten/Uni/IU/Sem 3/Programmierung von industriellen Informationssysteme mit Java EE/git/ghostnets/ghostnets/src/main/webapp",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.ghostnets [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Daten/Uni/IU/Sem 3/Programmierung von industriellen Informationssysteme mit Java EE/git/ghostnets/ghostnets/src/main/webapp&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Daten\Uni\IU\Sem 3\Programmierung von industriellen Informationssysteme mit Java EE\git\ghostnets\ghostnets\src\main\webapp" />

@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
-
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
@@ -24,17 +23,11 @@ import org.primefaces.model.map.Marker;
 public class OverviewController implements Serializable
 {
     private static EntityManagerFactory emf;
-
     private ArrayList<Net> nets;
     private MapModel mapModel;
-
-
-
-
     private Marker selectedMarker;
-
-
     private Net selectedNet;
+    private Net.RecoveryStatus selectedStatus;
 
     public OverviewController(){}
 
@@ -50,16 +43,55 @@ public class OverviewController implements Serializable
         mapModel = generateMapModel();
     }
 
+    public static ArrayList<Net> loadNets(){
+        EntityManager em = getEmf().createEntityManager();
+        try {
+            return new ArrayList<>(em.createQuery("SELECT n FROM Net n LEFT JOIN FETCH n.sightings",
+                    Net.class).getResultList());
+        } finally {
+            em.close();
+        }
+    }
+
+
+    private MapModel generateMapModel(){
+        mapModel = new DefaultMapModel();
+        for (Net net : nets) {
+            if ((net.getRecoveryStatus() == Net.RecoveryStatus.GEMELDET
+                        || net.getRecoveryStatus() == Net.RecoveryStatus.BERGUNG_BEVORSTEHEND
+                    ) && !net.getSightings().isEmpty()) {
+                Sighting mostRecent = net.getMostRecentSighting();
+
+                Marker marker = new Marker(
+                        new LatLng(mostRecent.getLatitude(), mostRecent.getLongitude())
+                );
+
+                marker.setData(net);
+                switch(net.getRecoveryStatus()){
+                    case BERGUNG_BEVORSTEHEND:
+                        marker.setIcon("https://maps.google.com/mapfiles/ms/icons/green-dot.png");
+                        break;
+                    case GEMELDET:
+                        marker.setIcon("https://maps.google.com/mapfiles/ms/icons/yellow-dot.png");
+                        break;
+                }
+                mapModel.addOverlay(marker);
+            }
+        }
+        return mapModel;
+    }
     public void onMarkerSelect(OverlaySelectEvent event) {
         selectedMarker = (Marker) event.getOverlay();
         selectedNet = (Net) selectedMarker.getData();
     }
 
-    public void setRecoveryStatusRecovered() {
-        System.out.println("Entering setRecoveryStatusRecovered");
+    public void setRecoveryStatus(int statusCode) {
+        Net.RecoveryStatus status = Net.RecoveryStatus.values()[statusCode];
+        System.out.println("Entering setRecoveryStatus");
+        System.out.println(""+status);
         System.out.println(""+selectedNet.getId());
         if (selectedNet != null) {
-            selectedNet.setRecoveryStatus(Net.RecoveryStatus.GEBORGEN);  // example status
+            selectedNet.setRecoveryStatus(status);
             EntityManager em = getEmf().createEntityManager();
             EntityTransaction tx = em.getTransaction();
             try {
@@ -72,43 +104,12 @@ public class OverviewController implements Serializable
             }
             reloadNets();
         }
-        System.out.println("Exiting setRecoveryStatusRecovered");
-    }
-    public void setRecoveryStatusDisappeared() {
-        System.out.println("Entering setRecoveryStatusDisappeared");
-        System.out.println(""+selectedNet.getId());
-        if (selectedNet != null) {
-            selectedNet.setRecoveryStatus(Net.RecoveryStatus.VERSCHOLLEN);  // example status
-            EntityManager em = getEmf().createEntityManager();
-            EntityTransaction tx = em.getTransaction();
-            try {
-                tx.begin();
-                em.merge(selectedNet);
-                tx.commit();
-            }
-            finally {
-                em.close();
-            }
-            reloadNets();
-        }
-        System.out.println("Exiting setRecoveryStatusDisappeared");
+        System.out.println("Exiting setRecoveryStatus");
     }
 
     public String getSightingUrl() {
         if(selectedNet != null) return "sighting.xhtml?faces-redirect=true&amp;netId=" + selectedNet.getId();
         return "";
-    }
-
-    public MapModel getMapModel() {
-        return mapModel;
-    }
-
-    public void setMapModel(MapModel mapModel) {
-        this.mapModel = mapModel;
-    }
-
-    public ArrayList<Net> getNets() {
-        return nets;
     }
 
     private static EntityManagerFactory getEmf() {
@@ -132,16 +133,10 @@ public class OverviewController implements Serializable
         reloadNets();
     }
 
-    public static ArrayList<Net> loadNets(){
-        EntityManager em = getEmf().createEntityManager();
-        try {
-            return new ArrayList<>(em.createQuery("SELECT n FROM Net n LEFT JOIN FETCH n.sightings", Net.class).getResultList());
-        } finally {
-            em.close();
-        }
-    }
-
     public String convertStatusToString(Net.RecoveryStatus recoveryStatus){
+        if(recoveryStatus == null){
+            return "null";
+        }
         switch(recoveryStatus){
             case BERGUNG_BEVORSTEHEND:
                 return "Being Recovered";
@@ -167,7 +162,6 @@ public class OverviewController implements Serializable
         return "";
     }
 
-
     public void generateRandNet(){
         System.out.println("Entered generateRandNet");
         EntityManager em =  getEmf().createEntityManager();
@@ -176,7 +170,6 @@ public class OverviewController implements Serializable
         Random rnd = new Random();
         try {
             tx.begin();
-//            Net newNet = new Net(rnd.nextInt(101), Net.RecoveryStatus.values()[rnd.nextInt(4)]);
             Net newNet = new Net(rnd.nextInt(101), Net.RecoveryStatus.GEMELDET);
             Recoverer recoverer = new Recoverer("Peter", "Gabriel", "pGabriel@gabrial.com");
             Sighting newSighting = new Sighting(
@@ -202,30 +195,6 @@ public class OverviewController implements Serializable
         System.out.println("Nets in DB: " + count);
     }
 
-    private MapModel generateMapModel(){
-        mapModel = new DefaultMapModel();
-        for (Net net : nets) {
-            if ((net.getRecoveryStatus() == Net.RecoveryStatus.GEMELDET || net.getRecoveryStatus() == Net.RecoveryStatus.BERGUNG_BEVORSTEHEND) && !net.getSightings().isEmpty()) {
-                Sighting mostRecent = net.getMostRecentSighting();
-                
-                Marker marker = new Marker(
-                    new LatLng(mostRecent.getLatitude(), mostRecent.getLongitude())
-                );
-
-                marker.setData(net);
-                switch(net.getRecoveryStatus()){
-                    case BERGUNG_BEVORSTEHEND:
-                        marker.setIcon("https://maps.google.com/mapfiles/ms/icons/green-dot.png");
-                        break;
-                    case GEMELDET:
-                        marker.setIcon("https://maps.google.com/mapfiles/ms/icons/yellow-dot.png");
-                        break;
-                }
-                mapModel.addOverlay(marker);
-            }
-        }
-        return mapModel;
-    }
 
     public String getNetMarkerText(Net net){
         String text = "ID: " + net.getId() + ". Status: " + net.getRecoveryStatus();
@@ -256,5 +225,24 @@ public class OverviewController implements Serializable
         this.selectedMarker = selectedMarker;
     }
 
+    public MapModel getMapModel() {
+        return mapModel;
+    }
+
+    public void setMapModel(MapModel mapModel) {
+        this.mapModel = mapModel;
+    }
+
+    public ArrayList<Net> getNets() {
+        return nets;
+    }
+
+    public void setSelectedStatus(Net.RecoveryStatus selectedStatus) {
+        this.selectedStatus = selectedStatus;
+    }
+
+    public Net.RecoveryStatus getSelectedStatus() {
+        return selectedStatus;
+    }
 
 }

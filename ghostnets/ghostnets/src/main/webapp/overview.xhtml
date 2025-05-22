@@ -17,8 +17,8 @@
     <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
     <h:form id="mapForm">
         <p:gmap id="gmap"
-                center="40, -40"
-                zoom="5"
+                center="0,0"
+                zoom="3"
                 type="HYBRID"
                 model="#{overviewController.mapModel}"
                 style="width:100%;height:400px">
@@ -29,23 +29,22 @@
                 <h:panelGroup rendered="#{not empty overviewController.selectedNet}">
                     <h:outputText value="#{overviewController.getNetMarkerText(overviewController.selectedNet)}" /><br/>
                     <p:commandButton value="✅ Mark As Recovered"
-                                     action="#{overviewController.setRecoveryStatusRecovered()}"
+                                     action="#{overviewController.setRecoveryStatus(1)}"
                                      update="gmap infoWindow netsTable"
                                      styleClass="ui-button-recovered"/>
 
                     <p:commandButton value="⏳ Mark As Recovery In Progress"
-                                     ajax="false"
                                      action="#{overviewController.getRecoveryUrl()}"
                                      styleClass="ui-button"/>
 
                     <p:commandButton value="🔎 Mark as Disappeared"
-                                     action="#{overviewController.setRecoveryStatusDisappeared()}"
+                                     action="#{overviewController.setRecoveryStatus(0)}"
                                      update="gmap infoWindow netsTable"
                                      styleClass="ui-button"/>
 
+
                     <p:commandButton value="➕ Register New Sighting"
                                      action="#{overviewController.getSightingUrl()}"
-                                     update="gmap infoWindow netsTable"
                                      styleClass="ui-button"/>
                 </h:panelGroup>
 
@@ -53,7 +52,12 @@
         </p:gmap>
 
         <div class="card">
-            <p:dataTable id="netsTable" var="net" value="#{overviewController.nets}" allowUnsorting="true" sortMode="single" lazy="false">
+            <p:dataTable id="netsTable"
+                         var="net"
+                         value="#{overviewController.nets}"
+                         allowUnsorting="true"
+                         sortMode="single"
+                         lazy="false">
                 <p:column headerText="Latitude" sortBy="#{net.mostRecentLat}">
                     <h:outputText value="#{net.getMostRecentLat()}" />
                 </p:column>
@@ -70,7 +74,7 @@
                     <h:outputText value="#{overviewController.convertStatusToString(net.recoveryStatus)}" />
                 </p:column>
 
-                <p:column headerText="Last Sighted" >
+                <p:column headerText="Last Sighted" sortBy="#{net.getMostRecentSighting().timestamp}">
                     <h:outputText value="#{net.getMostRecentSighting().timestamp}" />s
                 </p:column>
 
