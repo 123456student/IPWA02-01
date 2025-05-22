@@ -1,0 +1,19 @@
+----------------------------------------------------------------
+Mon May 19 19:25:03 CEST 2025:
+Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): Instanz a816c00e-0196-e993-dc0e-00001e7fd190
+für Datenbankverzeichnis C:\db\ghostnetsdb mit Class Loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a
+Geladen aus file:/C:/Program%20Files/Java/jdk-24/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=24.0.1+9-30
+user.dir=C:\db\ghostnetsdb
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Datenbank-Class Loader wurde gestartet - derby.database.classpath=''
+----------------------------------------------------------------
+Mon May 19 19:26:51 CEST 2025: Derby-Engine wird heruntergefahren
+----------------------------------------------------------------
+Mon May 19 19:26:51 CEST 2025:
+Instanz a816c00e-0196-e993-dc0e-00001e7fd190 im Datenbankverzeichnis C:\db\ghostnetsdb mit Class Loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a wird heruntergefahren
+----------------------------------------------------------------
