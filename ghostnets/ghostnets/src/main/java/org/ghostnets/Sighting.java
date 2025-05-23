@@ -42,9 +42,7 @@ public class Sighting {
 
     public void setId(Long id) { this.id = id; }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
+    public LocalDateTime getTimestamp() { return timestamp; }
 
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;

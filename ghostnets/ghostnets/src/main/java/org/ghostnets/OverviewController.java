@@ -3,7 +3,6 @@ package org.ghostnets;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.Collectors;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
@@ -11,7 +10,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import jdk.vm.ci.meta.Local;
 import org.primefaces.event.map.OverlaySelectEvent;
 import org.primefaces.model.map.DefaultMapModel;
 import org.primefaces.model.map.LatLng;
@@ -27,7 +25,6 @@ public class OverviewController implements Serializable
     private MapModel mapModel;
     private Marker selectedMarker;
     private Net selectedNet;
-    private Net.RecoveryStatus selectedStatus;
 
     public OverviewController(){}
 
@@ -236,13 +233,4 @@ public class OverviewController implements Serializable
     public ArrayList<Net> getNets() {
         return nets;
     }
-
-    public void setSelectedStatus(Net.RecoveryStatus selectedStatus) {
-        this.selectedStatus = selectedStatus;
-    }
-
-    public Net.RecoveryStatus getSelectedStatus() {
-        return selectedStatus;
-    }
-
 }

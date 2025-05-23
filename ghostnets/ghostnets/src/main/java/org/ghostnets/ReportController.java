@@ -74,14 +74,6 @@ public class ReportController implements Serializable
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Thank you for the report!", null));
     }
 
-    public static ArrayList<Net> loadNets(){
-        EntityManager em = getEmf().createEntityManager();
-        try {
-            return new ArrayList<>(em.createQuery("SELECT n FROM Net n LEFT JOIN FETCH n.sightings", Net.class).getResultList());
-        } finally {
-            em.close();
-        }
-    }
 
     public Report getReport() {
         return report;

@@ -1,0 +1,191 @@
+@startuml
+left to right direction
+
+enum org.ghostnets.RecoveryStatus {
++  VERSCHOLLEN
++  GEBORGEN
++  GEMELDET
++  BERGUNG_BEVORSTEHEND
+}
+class org.ghostnets.Report {
+- int size
+- Net.RecoveryStatus recoveryStatus
+- LocalDateTime timestamp
+- double longitude
+- double latitude
+- String firstName
+- String lastName
+- String mailAddress
++ int getSize()
++ void setSize(int)
++ Net.RecoveryStatus getRecoveryStatus()
++ void setRecoveryStatus(Net.RecoveryStatus)
++ LocalDateTime getTimestamp()
++ void setTimestamp(LocalDateTime)
++ double getLongitude()
++ void setLongitude(double)
++ double getLatitude()
++ void setLatitude(double)
++ String getFirstName()
++ void setFirstName(String)
++ String getLastName()
++ void setLastName(String)
++ void setMailAddress(String)
++ String getMailAddress()
+}
+
+
+class org.ghostnets.SightingController {
+- {static} EntityManagerFactory emf
+- int netId
+- Net net
+- Report report
++ void initController()
+- {static} EntityManagerFactory getEmf()
++ void registerNewSighting()
++ int getNetId()
++ Net getNet()
++ Report getReport()
++ void setReport(Report)
+}
+
+
+
+class org.ghostnets.OverviewController {
+- {static} EntityManagerFactory emf
+- ArrayList<Net> nets
+- MapModel mapModel
+- Marker selectedMarker
+- Net selectedNet
+- Net.RecoveryStatus selectedStatus
++ void initController()
++ {static} ArrayList<Net> loadNets()
+- MapModel generateMapModel()
++ void onMarkerSelect(OverlaySelectEvent)
++ void setRecoveryStatus(int)
++ String getSightingUrl()
+- {static} EntityManagerFactory getEmf()
++ void addNet(Net)
++ String convertStatusToString(Net.RecoveryStatus)
++ void generateAndLoad()
++ String getRecoveryUrl()
++ void generateRandNet()
++ String getNetMarkerText(Net)
++ void reloadNets()
++ Net getSelectedNet()
++ void setSelectedNet(Net)
++ Marker getSelectedMarker()
++ void setSelectedMarker(Marker)
++ MapModel getMapModel()
++ void setMapModel(MapModel)
++ ArrayList<Net> getNets()
++ void setSelectedStatus(Net.RecoveryStatus)
++ Net.RecoveryStatus getSelectedStatus()
+}
+
+
+
+
+class org.ghostnets.ReportController {
+- {static} EntityManagerFactory emf
+- Report report
++ void initController()
+- {static} EntityManagerFactory getEmf()
++ void saveNewNet()
++ {static} ArrayList<Net> loadNets()
++ Report getReport()
++ void setReport(Report)
+}
+
+
+class org.ghostnets.RecoveryController {
+- {static} EntityManagerFactory emf
+- int netId
+- Net net
+- Recoverer recoverer
++ void initController()
+- {static} EntityManagerFactory getEmf()
++ void setRecoveryStatusInProgress()
++ int getNetId()
++ Net getNet()
++ Recoverer getRecoverer()
+}
+
+
+class org.ghostnets.Sighting {
+- Long id
+- LocalDateTime timestamp
+- double longitude
+- double latitude
+- Recoverer reporter
+- Net net
++ Long getId()
++ void setId(Long)
++ LocalDateTime getTimestamp()
++ void setTimestamp(LocalDateTime)
++ double getLongitude()
++ void setLongitude(double)
++ double getLatitude()
++ void setLatitude(double)
++ Recoverer getReporter()
++ void setReporter(Recoverer)
++ Net getNet()
++ void setNet(Net)
+}
+
+
+
+class org.ghostnets.Recoverer {
+- long id
+- String firstName
+- String lastName
+- String mailAddress
++ String getFirstName()
++ void setFirstName(String)
++ String getLastName()
++ void setLastName(String)
++ String getMailAddress()
++ void setMailAddress(String)
++ long getId()
+}
+
+
+class org.ghostnets.Net {
+- int id
+- int size
+- RecoveryStatus recoveryStatus
+- List<Sighting> sightings
+- Recoverer recoveredBy
++ Sighting getMostRecentSighting()
++ double getMostRecentLat()
++ double getMostRecentLong()
++ void addSighting(Sighting)
++ String toString()
++ Recoverer getRecoveredBy()
++ void setRecoveredBy(Recoverer)
++ long getId()
++ int getSize()
++ void setSize(int)
++ void setRecoveryStatus(RecoveryStatus)
++ RecoveryStatus getRecoveryStatus()
++ void setRecoverer(Recoverer)
++ List<Sighting> getSightings()
++ void setSightings(List<Sighting>)
+}
+
+
+
+org.ghostnets.Report -[hidden]-> org.ghostnets.Net
+org.ghostnets.OverviewController -[hidden]-> org.ghostnets.Recoverer
+org.ghostnets.OverviewController -[hidden]-> org.ghostnets.Sighting
+org.ghostnets.Report -[hidden]-> org.ghostnets.RecoveryController
+org.ghostnets.SightingController -[hidden]-> org.ghostnets.RecoveryStatus
+
+java.io.Serializable <|.. org.ghostnets.Net
+java.io.Serializable <|.. org.ghostnets.SightingController
+java.io.Serializable <|.. org.ghostnets.Recoverer
+java.io.Serializable <|.. org.ghostnets.ReportController
+java.io.Serializable <|.. org.ghostnets.RecoveryController
+java.io.Serializable <|.. org.ghostnets.Report
+java.io.Serializable <|.. org.ghostnets.OverviewController
+@enduml
